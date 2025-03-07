@@ -1,0 +1,57 @@
+Старков Савва 3343
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date
+Fri 07 Mar 2025 04:52:01 AM MSK
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && whoami
+Fri 07 Mar 2025 04:52:37 AM MSK
+vboxuser
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && lscpu
+Fri 07 Mar 2025 04:52:45 AM MSK
+Architecture:             x86_64
+  CPU op-mode(s):         32-bit, 64-bit
+  Address sizes:          48 bits physical, 48 bits virtual
+  Byte Order:             Little Endian
+CPU(s):                   6
+  On-line CPU(s) list:    0-5
+Vendor ID:                AuthenticAMD
+  Model name:             AMD Ryzen 7 5800H with Radeon Graphics
+    CPU family:           25
+    Model:                80
+    Thread(s) per core:   1
+    Core(s) per socket:   6
+    Socket(s):            1
+    Stepping:             0
+    BogoMIPS:             6387.77
+    Flags:                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mm
+                          xext fxsr_opt rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse
+                          3 cx16 sse4_1 sse4_2 movbe popcnt aes rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowp
+                          refetch vmmcall fsgsbase bmi1 bmi2 invpcid rdseed adx clflushopt sha_ni arat
+Virtualization features:  
+  Hypervisor vendor:      KVM
+  Virtualization type:    full
+Caches (sum of all):      
+  L1d:                    192 KiB (6 instances)
+  L1i:                    192 KiB (6 instances)
+  L2:                     3 MiB (6 instances)
+  L3:                     96 MiB (6 instances)
+NUMA:                     
+  NUMA node(s):           1
+  NUMA node0 CPU(s):      0-5
+Vulnerabilities:          
+  Gather data sampling:   Not affected
+  Itlb multihit:          Not affected
+  L1tf:                   Not affected
+  Mds:                    Not affected
+  Meltdown:               Not affected
+  Mmio stale data:        Not affected
+  Reg file data sampling: Not affected
+  Retbleed:               Not affected
+  Spec rstack overflow:   Mitigation; safe RET
+  Spec store bypass:      Not affected
+  Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+  Spectre v2:             Mitigation; Retpolines; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+  Srbds:                  Not affected
+  Tsx async abort:        Not affected
+
+  1)
+  
