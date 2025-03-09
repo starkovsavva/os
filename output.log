@@ -284,18 +284,18 @@ Sun 09 Mar 2025 07:20:46 PM MSK
 8)
 
 vboxuser@vbox:/etc$ date && cat passwd | head -n 4
-Пн 09 мар 2025 19:46:20 MSK
+Sun 09 Mar 2025 19:46:20 MSK
 root:x:0:0:root:/root:/bin/bash
 daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
 bin:x:2:2:bin:/bin:/usr/sbin/nologin
 sys:x:3:3:sys:/dev:/usr/sbin/nologin
 vboxuser@vbox:/etc$ date && cat shadow
-Пн 09 мар 2025 19:46:29 MSK
+Sun 09 Mar 2025 19:46:29 MSK
 cat: shadow: Отказано в доступе
 vboxuser@vbox:/etc$ 
 
 vboxuser@vbox:/etc$ date && sudo cat shadow | head -n 4
-Пн 09 мар 2025 19:46:50 MSK
+Sun 09 Mar 2025 19:46:50 MSK
 [sudo] пароль для vboxuser: 
 root:*:19962:0:99999:7:::
 daemon:*:19962:0:99999:7:::
@@ -303,14 +303,14 @@ bin:*:19962:0:99999:7:::
 sys:*:19962:0:99999:7:::
 
 vboxuser@vbox:/etc$ date && ls -l passwd
-Пн 09 мар 2025 19:48:46 MSK
+Sun 09 Mar 2025 19:48:46 MSK
 -rw-r--r-- 1 root root 2903 фев 13 23:18 passwd
 vboxuser@vbox:/etc$ date && ls -l shadow
-Пн 09 мар 2025 19:48:50 MSK
+Sun 09 Mar 2025 19:48:50 MSK
 -rw-r----- 1 root shadow 1359 фев 13 23:18 shadow
 
 vboxuser@vbox:/$ date && usr/bin/passwd
-Пн 09 мар 2025 19:50:06 MSK
+Sun 09 Mar 2025 19:50:06 MSK
 Смена пароля для vboxuser.
 Текущий пароль: 
 Новый пароль: 
@@ -394,31 +394,31 @@ drwxr-x--- 2 vboxuser vboxuser 4096 Mar  9 19:26 test_folder
 10)
 
 vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && echo "Secret data" >> secret.txt
-Пн 09 мар 2025 19:33:05 MSK
+Sun 09 Mar 2025 19:33:05 MSK
 
 vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && sudo chmod 600 secret.txt && ls -l examples/secret.txt 
-Пн 09 мар 2025 19:33:08 MSK
--rw------- 1 vboxuser vboxuser 12 мар  3 22:15 secret.txt
+Sun 09 Mar 2025 19:33:08 MSK
+-rw------- 1 vboxuser vboxuser 12 Mar  3 22:15 secret.txt
 
 vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && sudo su testuser 
-Пн 09 мар 2025 19:34:27 MSK
+Sun 09 Mar 2025 19:34:27 MSK
 $ date && whoami
-Пн 09 мар 2025 19:35:38 MSK
+Sun 09 Mar 2025 19:35:38 MSK
 testuser
 $ date && cat secret.txt
-Пн 09 мар 2025 19:35:48 MSK
+Sun 09 Mar 2025 19:35:48 MSK
 cat: secret.txt: Отказано в доступе
 
 vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && gcc gateway.c -o gateway
-Пн 09 мар 2025 19:35:49 MSK
+Sun 09 Mar 2025 19:35:49 MSK
 
 vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && sudo chown vboxuser:vboxuser gateway && chmod 4755 gateway
-Пн 09 мар 2025 19:35:50 MSK
+Sun 09 Mar 2025 19:35:50 MSK
 [sudo] пароль для vboxuser:
 
 vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && ls -l gateway
-Пн 09 мар 2025 19:35:55 MSK
--rwsr-xr-x 1 vboxuser vboxuser 16144 мар  3 22:19 gateway
+Sun 09 Mar 2025 19:35:55 MSK
+-rwsr-xr-x 1 vboxuser vboxuser 16144 Mar  3 22:19 gateway
 
 vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ sudo su testuser 
 $ gateway
@@ -426,6 +426,212 @@ sh: 1: gateway: not found
 $ ./gateway
 Secret data
 $ date && ./gateway && whoami
-Пн 09 мар 2025 19:36:17 MSK
+Sun 09 Mar 2025 19:36:17 MSK
 Secret data
 testuser
+
+11)
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && tree -L 2
+
+Sun 09 Mar 2025 19:58:55 MSK
+.
+├── error.log
+├── example
+│   └── output.txt
+├── gateway
+├── gateway.c
+├── hello.txt
+├── link_cp.txt -> output.txt
+├── link_ln.txt -> output.txt
+├── out2.txt
+├── output.log
+├── output.txt
+├── out.txt
+├── secret.txt
+├── sr0
+├── task10.sh
+├── task1.sh
+├── task2.sh
+├── task3.sh
+├── task7.sh
+├── task8.sh
+├── task91.sh
+├── test
+│   └── test
+├── test.gif
+└── test.png
+
+3 directories, 23 files
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && lsblk -fp
+Sun 09 Mar 2025 07:58:42 PM MSK
+NAME FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+/dev/loop0
+                                                                   0   100% /snap/code/184
+/dev/loop1
+                                                                   0   100% /snap/core20/2496
+/dev/loop2
+                                                                   0   100% /snap/pycharm-community/439
+/dev/loop3
+                                                                   0   100% /snap/core22/1748
+/dev/loop4
+                                                                   0   100% /snap/snapd/23545
+/dev/loop5
+                                                                   0   100% /snap/pycharm-community/457
+/dev/sda
+                                                                            
+├─/dev/sda1
+│    ext4   1.0         dd4cfd84-3657-493e-8be1-7a97bf047402    3.3G    77% /
+├─/dev/sda2
+│                                                                           
+└─/dev/sda5
+     swap   1           1fe47dd8-0b42-437f-8833-980c10bc2b20                [SWAP]
+/dev/sr0
+     iso966 Jolie VBox_GAs_7.1.6
+                        2025-01-21-13-18-27-98                     0   100% /media/cdrom0
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$  date && mount | head -n 5
+Sun 09 Mar 2025 07:59:14 PM MSK
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=4036712k,nr_inodes=1009178,mode=755,inode64)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,noexec,relatime,size=813088k,mode=755,inode64)
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && findmnt
+Sun 09 Mar 2025 07:59:52 PM MSK
+TARGET                                                  SOURCE      FSTYPE  OPTIONS
+/                                                       /dev/sda1   ext4    rw,relat
+├─/sys                                                  sysfs       sysfs   rw,nosui
+│ ├─/sys/kernel/security                                securityfs  securit rw,nosui
+│ ├─/sys/fs/cgroup                                      cgroup2     cgroup2 rw,nosui
+│ ├─/sys/fs/pstore                                      pstore      pstore  rw,nosui
+│ ├─/sys/fs/bpf                                         bpf         bpf     rw,nosui
+│ ├─/sys/kernel/tracing                                 tracefs     tracefs rw,nosui
+│ ├─/sys/kernel/debug                                   debugfs     debugfs rw,nosui
+│ │ └─/sys/kernel/debug/tracing                         tracefs     tracefs rw,nosui
+│ ├─/sys/kernel/config                                  configfs    configf rw,nosui
+│ └─/sys/fs/fuse/connections                            fusectl     fusectl rw,nosui
+├─/proc                                                 proc        proc    rw,nosui
+│ └─/proc/sys/fs/binfmt_misc                            systemd-1   autofs  rw,relat
+│   └─/proc/sys/fs/binfmt_misc                          binfmt_misc binfmt_ rw,nosui
+├─/dev                                                  udev        devtmpf rw,nosui
+│ ├─/dev/pts                                            devpts      devpts  rw,nosui
+│ ├─/dev/shm                                            tmpfs       tmpfs   rw,nosui
+│ ├─/dev/hugepages                                      hugetlbfs   hugetlb rw,relat
+│ └─/dev/mqueue                                         mqueue      mqueue  rw,nosui
+├─/run                                                  tmpfs       tmpfs   rw,nosui
+│ ├─/run/lock                                           tmpfs       tmpfs   rw,nosui
+│ ├─/run/credentials/systemd-sysusers.service           ramfs       ramfs   ro,nosui
+│ ├─/run/credentials/systemd-tmpfiles-setup-dev.service ramfs       ramfs   ro,nosui
+│ ├─/run/credentials/systemd-sysctl.service             ramfs       ramfs   ro,nosui
+│ ├─/run/credentials/systemd-tmpfiles-setup.service     ramfs       ramfs   ro,nosui
+│ ├─/run/user/1000                                      tmpfs       tmpfs   rw,nosui
+│ │ ├─/run/user/1000/gvfs                               gvfsd-fuse  fuse.gv rw,nosui
+│ │ └─/run/user/1000/doc                                portal      fuse.po rw,nosui
+│ ├─/run/docker/netns/11c9bf32600d                      nsfs[net:[4026532558]]
+│ │                                                                 nsfs    rw
+│ ├─/run/docker/netns/713cd4b6bd68                      nsfs[net:[4026532661]]
+│ │                                                                 nsfs    rw
+│ └─/run/docker/netns/c22f61da6b67                      nsfs[net:[4026532564]]
+│                                                                   nsfs    rw
+├─/snap/core20/2496                                     /dev/loop1  squashf ro,nodev
+├─/snap/pycharm-community/439                           /dev/loop2  squashf ro,nodev
+├─/snap/snapd/23545                                     /dev/loop4  squashf ro,nodev
+├─/snap/code/184                                        /dev/loop0  squashf ro,nodev
+├─/snap/core22/1748                                     /dev/loop3  squashf ro,nodev
+├─/snap/pycharm-community/457                           /dev/loop5  squashf ro,nodev
+├─/media/cdrom0                                         /dev/sr0    iso9660 ro,nosui
+├─/var/lib/docker/overlay2/13fc6baf125bdbfc1088fcee92d5e55e834396b1310713a71909dfb69aeb265f/merged
+│                                                       overlay     overlay rw,relat
+├─/var/lib/docker/overlay2/a5ad022487f61401f495d73a96c5d50ba631f3f5b9335f6d55fedb7f06c06607/merged
+│                                                       overlay     overlay rw,relat
+└─/var/lib/docker/overlay2/1e2f8eae3a8e4ee994a953aeb0aa4a5cdd5de42e1f815ca878097f6d758d62d0/merged
+                                                        overlay     overlay rw,relat
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && mount >> mount1
+Sun 09 Mar 2025 08:02:13 PM MSK
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$  date && mount >> mount2
+Sun 09 Mar 2025 08:02:30 PM MSK
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$  date && diff mount1 mount2
+Sun 09 Mar 2025 08:03:10 PM MSK
+165a166
+> /dev/sdb1 on /media/vboxuser/ULTRAPACK_2 type vfat (rw,nosuid,nodev,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,showexec,utf8,flush,errors=remount-ro,uhelper=udisks2)
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && cat /usr/include/linux/limits.h
+Sun 09 Mar 2025 08:09:35 PM MSK
+/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
+#ifndef _LINUX_LIMITS_H
+#define _LINUX_LIMITS_H
+
+#define NR_OPEN         1024
+
+#define NGROUPS_MAX    65536    /* supplemental group IDs are available */
+#define ARG_MAX       131072    /* # bytes of args + environ for exec() */
+#define LINK_MAX         127    /* # links a file may have */
+#define MAX_CANON        255    /* size of the canonical input queue */
+#define MAX_INPUT        255    /* size of the type-ahead buffer */
+#define NAME_MAX         255    /* # chars in a file name */
+#define PATH_MAX        4096    /* # chars in a path name including nul */
+#define PIPE_BUF        4096    /* # bytes in atomic write to a pipe */
+#define XATTR_NAME_MAX   255    /* # chars in an extended attribute name */
+#define XATTR_SIZE_MAX 65536    /* size of an extended attribute value (64k) */
+#define XATTR_LIST_MAX 65536    /* size of extended attribute namelist (64k) */
+
+#define RTSIG_MAX         32
+
+#endif
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find / -type f 2>error.log | awk '{print length, $0}' | sort -nr | head -1
+Sun 09 Mar 2025 08:11:00 PM MSK
+212 /home/vboxuser/.vscode/extensions/ms-python.python-2025.2.0-linux-x64/python_files/lib/jedilsp/jedi/third_party/typeshed/third_party/2and3/requests/packages/urllib3/packages/ssl_match_hostname/_implementation.pyi
+
+vboxuser@vbox:/usr/share/file$ ls -l
+total 4
+drwxr-xr-x 2 root root 4096 Jan 28  2023 magic
+lrwxrwxrwx 1 root root   24 Jan 28  2023 magic.mgc -> ../../lib/file/magic.mgc
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && file -l /bin/cp | head -n 10
+Sun 09 Mar 2025 08:17:35 PM MSK
+Set 0:
+Binary patterns:
+Strength =  90@4: Format file Format []
+Strength =  90@5: Format File Format []
+Text patterns:
+Set 1:
+Binary patterns:
+Text patterns:
+Set 0:
+Binary patterns:
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && file -i /bin/cp
+Sun 09 Mar 2025 08:17:55 PM MSK
+/bin/cp: application/x-pie-executable; charset=binary
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && file -c /bin/cp
+Sun 09 Mar 2025 08:18:11 PM MSK
+cont    offset  type    opcode  mask    value   desc
+4: > 0 string,=format,"Format file Format"]
+5: > 0 string,=Format,"Format File Format"]
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && file --version
+Sun 09 Mar 2025 08:18:27 PM MSK
+file-5.44
+magic file from /home/vboxuser/.magic:/etc/magic:/usr/share/misc/magic
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && touch file.FormatFile
+Sun 09 Mar 2025 08:18:57 PM MSK
+
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && e
+cho -n "Format" >> file.FormatFile
+Sun 09 Mar 2025 08:19:22 PM MSK
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && sudo file -C -m /etc/magic
+Sun 09 Mar 2025 08:20:48 PM MSK
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && file file.FormatFile
+Sun 09 Mar 2025 08:21:08 PM MSK
+file.FormatFile: Format File Format
