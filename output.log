@@ -138,7 +138,7 @@ total 72
  5688 -rw-r--r-- 1 vboxuser vboxuser  5470 Mar  9 18:56 output.log
 39960 -rw-r--r-- 2 vboxuser vboxuser   518 Mar  9 18:38 output.txt
 40011 -rw-r--r-- 1 vboxuser vboxuser   160 Mar  9 18:56 out.txt
- 1114 -rwxr-xr-x 1 vboxuser vboxuser  1758 Mar  7 02:00 task10.sh
+ 1114 -rwxr-xr-x 1 vboxuser vboxuser  1758 Mar  7 02:00 gateway.sh
  1078 -rw-r--r-- 1 vboxuser vboxuser  1155 Mar  6 02:55 task1.sh
  1070 -rw-r--r-- 1 vboxuser vboxuser   187 Mar  6 10:33 task2.sh
  1105 -rw-r--r-- 1 vboxuser vboxuser   863 Mar  6 06:18 task3.sh
@@ -202,3 +202,230 @@ lrwxrwxrwx 1 vboxuser vboxuser 10 Mar  9 18:55 ./link_ln.txt -> output.txt
 
 6)
 
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && cat hello.txt
+Sun 09 Mar 2025 07:14:49 PM MSK
+Hello World!
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && od -tx1 -Ax hello.txt
+Sun 09 Mar 2025 07:15:06 PM MSK
+000000 48 65 6c 6c 6f 20 57 6f 72 6c 64 21 21
+00000d
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$  date && hexdump -C hello.txt
+Sun 09 Mar 2025 07:15:30 PM MSK
+00000000  48 65 6c 6c 6f 20 57 6f  72 6c 64 21 21           |Hello World!!|
+0000000d
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && hexdump -C test
+Sun 09 Mar 2025 07:16:10 PM MSK
+hexdump: test: Is a directory
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && hexdump -C test
+Sun 09 Mar 2025 07:16:40 PM MSK
+hexdump: test: Is a directory
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && hexdump -C test
+Sun 09 Mar 2025 07:16:53 PM MSK
+hexdump: test: Is a directory
+
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && od -tx1 -Ax test
+Sun 09 Mar 2025 07:17:20 PM MSK
+od: test: Is a directory
+000000
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && od -tx1 -tc test.gif | head -n 
+10
+Sun 09 Mar 2025 07:19:37 PM MSK
+0000000  47  49  46  38  39  61  90  06  98  03  f7  00  00  05  05  05
+          G   I   F   8   9   a 220 006 230 003 367  \0  \0 005 005 005
+0000020  14  14  14  19  19  19  1d  1d  1d  1d  1e  1e  1e  1e  1e  1e
+        024 024 024 031 031 031 035 035 035 035 036 036 036 036 036 036
+0000040  1e  1f  1f  1f  1f  1d  1e  27  1d  20  1f  1d  29  28  2a  1e
+        036 037 037 037 037 035 036   ' 035     037 035   )   (   * 036
+0000060  1e  34  25  1e  21  21  21  23  23  26  22  24  21  24  27  22
+        036   4   % 036   !   !   !   #   #   &   "   $   !   $   '   "
+0000100  24  24  24  25  25  26  26  26  25  26  26  26  26  26  28  25
+          $   $   $   %   %   &   &   &   %   &   &   &   &   &   (   %
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && hexdump -C test.png | head -n 1
+0
+Sun 09 Mar 2025 07:20:03 PM MSK
+00000000  89 50 4e 47 0d 0a 1a 0a  00 00 00 0d 49 48 44 52  |.PNG........IHDR|
+00000010  00 00 02 00 00 00 02 00  08 06 00 00 00 f4 78 d4  |..............x.|
+00000020  fa 00 00 00 04 73 42 49  54 08 08 08 08 7c 08 64  |.....sBIT....|.d|
+00000030  88 00 00 00 09 70 48 59  73 00 00 0e c4 00 00 0e  |.....pHYs.......|
+00000040  c4 01 95 2b 0e 1b 00 00  00 19 74 45 58 74 53 6f  |...+......tEXtSo|
+00000050  66 74 77 61 72 65 00 77  77 77 2e 69 6e 6b 73 63  |ftware.www.inksc|
+00000060  61 70 65 2e 6f 72 67 9b  ee 3c 1a 00 00 20 00 49  |ape.org..<... .I|
+00000070  44 41 54 78 9c ec dd 77  7c 5b d7 79 ff f1 0f 36  |DATx...w|[.y...6|
+00000080  08 70 00 dc 7b 89 d4 16  25 52 24 65 59 8e 2d ef  |.p..{...%R$eY.-.|
+00000090  15 3b 8e 9d bd 93 ce 24  6d 93 b6 19 4d d2 95 d5  |.;.....$m...M...|
+
+7)
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && bash task7.sh
+Sun 09 Mar 2025 07:20:46 PM MSK
+Создан каталог: test_dir
+=== Начальный размер ===
+Текущий размер каталога: 4.0K
+
+=== Добавляем 5 файлов по 1 МБ ===
+Текущий размер каталога: 5.1M
+
+=== Удаляем 3 файла ===
+Текущий размер каталога: 2.1M
+
+=== Добавляем 100 пустых файлов ===
+Текущий размер каталога: 2.1M
+
+=== Очищаем каталог ===
+Текущий размер каталога: 4.0K
+
+8)
+
+vboxuser@vbox:/etc$ date && cat passwd | head -n 4
+Пн 09 мар 2025 19:46:20 MSK
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+vboxuser@vbox:/etc$ date && cat shadow
+Пн 09 мар 2025 19:46:29 MSK
+cat: shadow: Отказано в доступе
+vboxuser@vbox:/etc$ 
+
+vboxuser@vbox:/etc$ date && sudo cat shadow | head -n 4
+Пн 09 мар 2025 19:46:50 MSK
+[sudo] пароль для vboxuser: 
+root:*:19962:0:99999:7:::
+daemon:*:19962:0:99999:7:::
+bin:*:19962:0:99999:7:::
+sys:*:19962:0:99999:7:::
+
+vboxuser@vbox:/etc$ date && ls -l passwd
+Пн 09 мар 2025 19:48:46 MSK
+-rw-r--r-- 1 root root 2903 фев 13 23:18 passwd
+vboxuser@vbox:/etc$ date && ls -l shadow
+Пн 09 мар 2025 19:48:50 MSK
+-rw-r----- 1 root shadow 1359 фев 13 23:18 shadow
+
+vboxuser@vbox:/$ date && usr/bin/passwd
+Пн 09 мар 2025 19:50:06 MSK
+Смена пароля для vboxuser.
+Текущий пароль: 
+Новый пароль: 
+Повторите ввод нового пароля: 
+passwd: пароль успешно обновлён
+
+9)
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && bash task91.sh 
+Sun 09 Mar 2025 07:26:38 PM MSK
+
+[9.1] Примеры chmod и chown
+Исходные права:
+Текущие права:
+total 12
+-rw-r--r-- 1 vboxuser vboxuser    0 Mar  9 19:26 file.txt
+-rw-r--r-- 1 vboxuser vboxuser   13 Mar  9 19:26 secret.txt
+-rwxr-xr-x 1 vboxuser vboxuser   42 Mar  9 19:26 suid_script.sh
+drwxr-xr-x 2 vboxuser vboxuser 4096 Mar  9 19:26 test_folder
+--------------------------------
+После chmod 755 file.txt:
+Текущие права:
+total 12
+-rwxr-xr-x 1 vboxuser vboxuser    0 Mar  9 19:26 file.txt
+-rw-r--r-- 1 vboxuser vboxuser   13 Mar  9 19:26 secret.txt
+-rwxr-xr-x 1 vboxuser vboxuser   42 Mar  9 19:26 suid_script.sh
+drwxr-xr-x 2 vboxuser vboxuser 4096 Mar  9 19:26 test_folder
+--------------------------------
+После chmod u=rwx,g=rx,o= test_folder:
+Текущие права:
+total 12
+-rwxr-xr-x 1 vboxuser vboxuser    0 Mar  9 19:26 file.txt
+-rw-r--r-- 1 vboxuser vboxuser   13 Mar  9 19:26 secret.txt
+-rwxr-xr-x 1 vboxuser vboxuser   42 Mar  9 19:26 suid_script.sh
+drwxr-x--- 2 vboxuser vboxuser 4096 Mar  9 19:26 test_folder
+--------------------------------
+[sudo] password for vboxuser: 
+Sorry, try again.
+[sudo] password for vboxuser: 
+После chown nobody file.txt:
+Текущие права:
+total 12
+-rwxr-xr-x 1 nobody   vboxuser    0 Mar  9 19:26 file.txt
+-rw-r--r-- 1 vboxuser vboxuser   13 Mar  9 19:26 secret.txt
+-rwxr-xr-x 1 vboxuser vboxuser   42 Mar  9 19:26 suid_script.sh
+drwxr-x--- 2 vboxuser vboxuser 4096 Mar  9 19:26 test_folder
+--------------------------------
+
+[9.2] Установка SUID
+Права с SUID:
+-rwsr-xr-x 1 vboxuser vboxuser 42 Mar  9 19:26 suid_script.sh
+Проверка SUID:
+-rwsr-xr-x 1 vboxuser vboxuser 42 Mar  9 19:26 suid_script.sh
+
+[9.3] Эксперимент с разными правами
+Права special.txt:
+-rwxr-x--- 1 testuser testgroup 0 Mar  9 19:26 special.txt
+
+Проверка доступа:
+От владельца (testuser):
+-rwxr-x--- 1 testuser testgroup 0 Mar  9 19:26 special.txt
+
+От члена группы (текущий пользователь):
+-rwxr-x--- 1 testuser testgroup 0 Mar  9 19:26 special.txt
+  cat: special.txt: Permission denied
+
+[9.4] Права каталога vs права файла
+
+Случай 1: Каталог rx, файл rw
+Попытка чтения файла:
+
+Случай 2: Каталог --x, файл rw
+Попытка просмотра каталога:
+  total 0
+  -rw------- 1 vboxuser vboxuser 0 Mar  9 19:26 inside.txt
+Попытка чтения файла:
+
+Тестовая среда удалена. Все изменения отменены.
+
+
+10)
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && echo "Secret data" >> secret.txt
+Пн 09 мар 2025 19:33:05 MSK
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && sudo chmod 600 secret.txt && ls -l examples/secret.txt 
+Пн 09 мар 2025 19:33:08 MSK
+-rw------- 1 vboxuser vboxuser 12 мар  3 22:15 secret.txt
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && sudo su testuser 
+Пн 09 мар 2025 19:34:27 MSK
+$ date && whoami
+Пн 09 мар 2025 19:35:38 MSK
+testuser
+$ date && cat secret.txt
+Пн 09 мар 2025 19:35:48 MSK
+cat: secret.txt: Отказано в доступе
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && gcc gateway.c -o gateway
+Пн 09 мар 2025 19:35:49 MSK
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && sudo chown vboxuser:vboxuser gateway && chmod 4755 gateway
+Пн 09 мар 2025 19:35:50 MSK
+[sudo] пароль для vboxuser:
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && ls -l gateway
+Пн 09 мар 2025 19:35:55 MSK
+-rwsr-xr-x 1 vboxuser vboxuser 16144 мар  3 22:19 gateway
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ sudo su testuser 
+$ gateway
+sh: 1: gateway: not found
+$ ./gateway
+Secret data
+$ date && ./gateway && whoami
+Пн 09 мар 2025 19:36:17 MSK
+Secret data
+testuser
