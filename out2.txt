@@ -1,0 +1,2 @@
+39960 -rw-r--r-- 2 vboxuser vboxuser   518 Mar  9 18:38 output.txt
+39960 -rw-r--r-- 2 vboxuser vboxuser 518 Mar  9 18:38 output.txt

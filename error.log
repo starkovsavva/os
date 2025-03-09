@@ -1,0 +1,7 @@
+find: ‘/run/snapd’: Permission denied
+find: ‘/run/docker’: Permission denied
+find: ‘/run/containerd’: Permission denied
+find: ‘/run/gdm3’: Permission denied
+find: ‘/run/udisks2’: Permission denied
+find: ‘/run/wpa_supplicant’: Permission denied
+find: ‘/run/cups/certs’: Permission denied

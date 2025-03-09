@@ -115,3 +115,90 @@ vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && bash task2.sh output.txt
 Sun 09 Mar 2025 06:51:11 PM MSK
 39960 -rw-r--r-- 2 vboxuser vboxuser   518 Mar  9 18:38 output.txt
 39960 -rw-r--r-- 2 vboxuser vboxuser 518 Mar  9 18:38 output.txt
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ cp -s output.txt  link_cp.txt
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ ln -s output.txt  link_ln.txt
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && bash task3.sh output.txt
+Sun 09 Mar 2025 06:56:09 PM MSK
+Результаты сохранены в out.txt
+Найдено ссылок: 2
+lrwxrwxrwx 1 vboxuser vboxuser    10 Mar  9 18:55 link_cp.txt -> output.txt
+lrwxrwxrwx 1 vboxuser vboxuser    10 Mar  9 18:55 link_ln.txt -> output.txt
+total 2
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && ls -li
+Sun 09 Mar 2025 06:57:10 PM MSK
+total 72
+39890 drwxr-xr-x 2 vboxuser vboxuser  4096 Mar  9 18:49 example
+ 5737 -rwxr-xr-x 1 root     root     16296 Mar  7 01:54 gateway
+14501 -rwsr-xr-x 1 testuser vboxuser   949 Mar  7 01:49 gateway.c
+39936 lrwxrwxrwx 1 vboxuser vboxuser    10 Mar  9 18:55 link_cp.txt -> output.txt
+40027 lrwxrwxrwx 1 vboxuser vboxuser    10 Mar  9 18:55 link_ln.txt -> output.txt
+39906 -rw-r--r-- 1 vboxuser vboxuser   132 Mar  9 18:51 out2.txt
+ 5688 -rw-r--r-- 1 vboxuser vboxuser  5470 Mar  9 18:56 output.log
+39960 -rw-r--r-- 2 vboxuser vboxuser   518 Mar  9 18:38 output.txt
+40011 -rw-r--r-- 1 vboxuser vboxuser   160 Mar  9 18:56 out.txt
+ 1114 -rwxr-xr-x 1 vboxuser vboxuser  1758 Mar  7 02:00 task10.sh
+ 1078 -rw-r--r-- 1 vboxuser vboxuser  1155 Mar  6 02:55 task1.sh
+ 1070 -rw-r--r-- 1 vboxuser vboxuser   187 Mar  6 10:33 task2.sh
+ 1105 -rw-r--r-- 1 vboxuser vboxuser   863 Mar  6 06:18 task3.sh
+ 1228 -rw-r--r-- 1 vboxuser vboxuser  1125 Mar  6 20:47 task7.sh
+ 1095 -rw-r--r-- 1 vboxuser vboxuser   836 Mar  6 21:12 task8.sh
+14481 -rw-r--r-- 1 vboxuser vboxuser  3067 Mar  6 23:28 task91.sh
+
+4)
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && ls -lR ~ | grep "^l" | grep "\-> output.txt"
+Sun 09 Mar 2025 06:58:33 PM MSK
+lrwxrwxrwx 1 vboxuser vboxuser    10 Mar  9 18:55 link_cp.txt -> output.txt
+lrwxrwxrwx 1 vboxuser vboxuser    10 Mar  9 18:55 link_ln.txt -> output.txt
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find ~ -type l -exec stat -c "%N" {} +  | grep -w "output.txt" 
+Sun 09 Mar 2025 06:59:11 PM MSK
+'/home/vboxuser/snap/code/184/.local/share/Trash/files/examples/link_ln.txt' -> 'output.txt'
+'/home/vboxuser/Documents/Starkov_Savva_lb1/link_ln.txt' -> 'output.txt'
+'/home/vboxuser/Documents/Starkov_Savva_lb1/link_cp.txt' -> 'output.txt'
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find ~ -type l -lname "output.txt"
+Sun 09 Mar 2025 06:59:55 PM MSK
+/home/vboxuser/snap/code/184/.local/share/Trash/files/examples/link_ln.txt
+/home/vboxuser/Documents/Starkov_Savva_lb1/link_ln.txt
+/home/vboxuser/Documents/Starkov_Savva_lb1/link_cp.txt
+
+5)
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find . -type f -ls 2>error.log  | head -n 1
+Sun 09 Mar 2025 07:02:04 PM MSK
+     5737     16 -rwxr-xr-x   1 root     root        16296 Mar  7 01:54 ./gateway
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find /dev -type l -ls  | head -n 1
+Sun 09 Mar 2025 07:02:49 PM MSK
+      799      0 lrwxrwxrwx   1 root     root            3 Mar  7 03:50 /dev/cdrom -> sr0
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find /dev -type b -ls  | head -n 1
+Sun 09 Mar 2025 07:03:25 PM MSK
+      327      0 brw-rw----   1 root     disk       7,   7 Mar  5 10:30 /dev/loop7
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find /dev -type c -ls  | head -n 1
+Sun 09 Mar 2025 07:03:46 PM MSK
+      816      0 crw-------   1 root     root     246,   0 Mar  7 04:41 /dev/hidraw0
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find /dev -type d -ls  | head -n 1
+Sun 09 Mar 2025 07:04:06 PM MSK
+        1      0 drwxr-xr-x  18 root     root         3340 Mar  7 04:41 /dev
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find /run -type p -ls 2>error.log  | head -n 1
+Sun 09 Mar 2025 07:04:47 PM MSK
+       76      0 prw-r--r--   1 vboxuser vboxuser        0 Mar  5 10:31 /run/user/1000/gnome-session-leader-fifo
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find /run -type s -ls 2>error.log  | head -n 1
+Sun 09 Mar 2025 07:05:07 PM MSK
+      960      0 srw-rw-rw-   1 root     root            0 Mar  5 10:30 /run/snapd-snap.socket
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && find . -type l -exec ls -l {} +
+Sun 09 Mar 2025 07:05:26 PM MSK
+lrwxrwxrwx 1 vboxuser vboxuser 10 Mar  9 18:55 ./link_cp.txt -> output.txt
+lrwxrwxrwx 1 vboxuser vboxuser 10 Mar  9 18:55 ./link_ln.txt -> output.txt
+
+6)
+

@@ -1,0 +1,7 @@
+-rw-r--r-- 1 root root   259624 Jan  2 16:31 config-6.1.0-29-amd64 -/config-6.1.0-29-amd64
+brw-rw----  1 root     disk      7,   0 Mar  5 10:30 loop0 -/loop0
+crw-r--r--  1 root     root     10, 235 Mar  5 10:30 autofs -/autofs
+drwxr-xr-x   3 root root  4096 Feb 27 20:15 boot -/boot
+lrwxrwxrwx   1 root root     7 Feb 21 00:39 bin -> usr/bin -/usr/bin
+prw-------  1 root              root          0 Mar  5 10:30 initctl -/initctl
+srw-rw----  1 root              docker        0 Mar  5 10:30 docker.sock -/docker.sock

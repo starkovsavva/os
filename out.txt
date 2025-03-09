@@ -1,0 +1,3 @@
+lrwxrwxrwx 1 vboxuser vboxuser    10 Mar  9 18:55 link_cp.txt -> output.txt
+lrwxrwxrwx 1 vboxuser vboxuser    10 Mar  9 18:55 link_ln.txt -> output.txt
+total 2
