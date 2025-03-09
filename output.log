@@ -53,5 +53,65 @@ Vulnerabilities:
   Srbds:                  Not affected
   Tsx async abort:        Not affected
 
-  1)
-  
+
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && systemd-detect-virt
+Sun 09 Mar 2025 06:28:11 PM MSK
+oracle
+
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && uname -a
+Sun 09 Mar 2025 06:28:36 PM MSK
+Linux vbox 6.1.0-31-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.128-1 (2025-02-07) x86_64 GNU/Linux
+
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && ls -l | grep '^-' | head -n 1
+Sun 09 Mar 2025 06:32:27 PM MSK
+-rwxr-xr-x 1 root     root     16296 Mar  7 01:54 gateway
+
+vboxuser@vbox:/dev$ date && ls -l | grep '^b' | head -n 1
+Sun 09 Mar 2025 06:33:37 PM MSK
+brw-rw----  1 root     disk      7,   0 Mar  5 10:30 loop0
+
+vboxuser@vbox:/$ date && ls -lR | grep '^c' | head -n 1
+Sun 09 Mar 2025 06:33:57 PM MSK
+crw-r--r--  1 root     root     10, 235 Mar  5 10:30 autofs
+
+vboxuser@vbox:/$ date && ls -l | grep '^d' | head -n 1
+Sun 09 Mar 2025 06:35:25 PM MSK
+drwxr-xr-x   3 root root  4096 Feb 27 20:15 boot
+
+vboxuser@vbox:/run$ date && ls -l | grep '^l' | head -n 1
+Sun 09 Mar 2025 06:36:07 PM MSK
+lrwxrwxrwx  1 root              root          8 Mar  5 10:30 shm -> /dev/shm
+
+vboxuser@vbox:/run$ date && ls -l | grep '^p' | head -n 1
+Sun 09 Mar 2025 06:36:29 PM MSK
+prw-------  1 root              root          0 Mar  5 10:30 initctl
+
+vboxuser@vbox:/run$ date && ls -l | grep '^s' | head -n 1
+Sun 09 Mar 2025 06:36:58 PM MSK
+srw-rw----  1 root              docker        0 Mar  5 10:30 docker.sock
+
+1) 
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && bash task1.sh output.txt && cat output.txt
+Sun 09 Mar 2025 06:38:34 PM MSK
+Результаты сохранены в: output.txt
+-rw-r--r-- 1 root root   259624 Jan  2 16:31 config-6.1.0-29-amd64 -/config-6.1.0-29-amd64
+brw-rw----  1 root     disk      7,   0 Mar  5 10:30 loop0 -/loop0
+crw-r--r--  1 root     root     10, 235 Mar  5 10:30 autofs -/autofs
+drwxr-xr-x   3 root root  4096 Feb 27 20:15 boot -/boot
+lrwxrwxrwx   1 root root     7 Feb 21 00:39 bin -> usr/bin -/usr/bin
+prw-------  1 root              root          0 Mar  5 10:30 initctl -/initctl
+srw-rw----  1 root              docker        0 Mar  5 10:30 docker.sock -/docker.sock
+
+2) 
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && ln output.txt ./example/output.txt 
+Sun 09 Mar 2025 06:49:48 PM MSK
+
+vboxuser@vbox:~/Documents/Starkov_Savva_lb1$ date && bash task2.sh output.txt
+Sun 09 Mar 2025 06:51:11 PM MSK
+39960 -rw-r--r-- 2 vboxuser vboxuser   518 Mar  9 18:38 output.txt
+39960 -rw-r--r-- 2 vboxuser vboxuser 518 Mar  9 18:38 output.txt
